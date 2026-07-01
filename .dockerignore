@@ -1,0 +1,10 @@
+.git
+.gitignore
+.pi
+**/node_modules
+**/dist
+README.md
+banner.svg
+ferrari.mp4
+main_test.go
+.DS_Store

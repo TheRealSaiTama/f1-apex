@@ -324,6 +324,10 @@ func main() {
 		json.NewEncoder(w).Encode(map[string]string{"message": "success"})
 	}))
 
+	mux.HandleFunc("GET /api/health", api(func(w http.ResponseWriter, r *http.Request) {
+		json.NewEncoder(w).Encode(map[string]string{"status": "ok"})
+	}))
+
 	// Fallback to serving the built React client if exists
 	distPath := "./frontend/dist"
 	mux.HandleFunc("GET /", func(w http.ResponseWriter, r *http.Request) {
@@ -339,9 +343,12 @@ func main() {
 		http.ServeFile(w, r, target)
 	})
 
-	port := ":8080"
-	log.Printf("Server listening on http://localhost%s", port)
-	if err := http.ListenAndServe(port, mux); err != nil {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	log.Printf("Server listening on :%s", port)
+	if err := http.ListenAndServe(":"+port, mux); err != nil {
 		log.Fatalf("Server failed: %s", err)
 	}
 }
