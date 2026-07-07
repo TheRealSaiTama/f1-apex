@@ -1,0 +1,4 @@
+server/f1-web
+
+# local go server (deployed as Vercel function, not used in prod)
+server/f1-web
