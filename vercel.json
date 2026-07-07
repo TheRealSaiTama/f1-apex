@@ -1,0 +1,16 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/dist",
+  "rewrites": [
+    { "source": "/api/ticker", "destination": "/api/ticker.json" },
+    { "source": "/api/featured-race", "destination": "/api/featured-race.json" },
+    { "source": "/api/drivers", "destination": "/api/drivers.json" },
+    { "source": "/api/calendar", "destination": "/api/calendar.json" },
+    { "source": "/api/tech", "destination": "/api/tech.json" },
+    { "source": "/api/teams", "destination": "/api/teams.json" },
+    { "source": "/api/circuit", "destination": "/api/circuit.json" },
+    { "source": "/api/news", "destination": "/api/news.json" },
+    { "source": "/api/gallery", "destination": "/api/gallery.json" }
+  ]
+}
