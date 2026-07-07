@@ -10,7 +10,6 @@
     { "source": "/api/tech", "destination": "/api/tech.json" },
     { "source": "/api/teams", "destination": "/api/teams.json" },
     { "source": "/api/circuit", "destination": "/api/circuit.json" },
-    { "source": "/api/news", "destination": "/api/news.json" },
-    { "source": "/api/gallery", "destination": "/api/gallery.json" }
+    { "source": "/api/news", "destination": "/api/news.json" }
   ]
 }
