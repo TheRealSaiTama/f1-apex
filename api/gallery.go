@@ -1,4 +1,4 @@
-package handler
+package api
 
 import (
 	"encoding/json"
@@ -67,7 +67,7 @@ func fetchGalleryItems() ([]GalleryItem, error) {
 	return items, nil
 }
 
-func Gallery(w http.ResponseWriter, r *http.Request) {
+func Handler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Cache-Control", "s-maxage=300, stale-while-revalidate=86400")
